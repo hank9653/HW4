@@ -2553,7 +2553,7 @@
 	<QtGui/qpainterpath.h>
 	<QtGui/qpixmap.h>
 
-1448178413 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.h
+1448181288 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.h
 	<QtWidgets/QMainWindow>
 	<Qt>
 	<QGraphicsView>
@@ -2566,6 +2566,7 @@
 	<QString>
 	<QWidget>
 	<QFileDialog>
+	<QTextStream>
 	"Painter.h"
 	<iostream>
 	<string>
@@ -2742,10 +2743,12 @@
 	<stack>
 	<utility>
 
-1448178852 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.cpp
+1448182954 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.cpp
 	"gui.moc"
+	<iostream>
+	<string>
 
-1448179500 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.moc
+1448180970 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.moc
 	"gui.h"
 	<QtCore/qbytearray.h>
 	<QtCore/qmetatype.h>
@@ -2770,4 +2773,7 @@
 	<QtCore/qlist.h>
 	<QtCore/qshareddata.h>
 	<QtCore/qmetatype.h>
+
+1444666580 c:\qt\qt5.5.1\5.5\mingw492_32\include\qtcore\qtextstream
+	"qtextstream.h"
 

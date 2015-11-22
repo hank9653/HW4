@@ -75,40 +75,27 @@ void gui::MessageDialog() {
 
 
 void gui::FileOpenDialog(){
-    QString filters("Text files (*.txt);;All files (*.*)");
-    QString defaultFilter("Text files (*.txt)");
-
-    /* Static method approach */
-    /*QFileDialog::getSaveFileName(0, "Save file", QDir::currentPath(),
-        filters, &defaultFilter);*/
-
-    /* Direct object construction approach */
-    /*QFileDialog fileDialog(0, "open file", QDir::currentPath(), filters);
-    fileDialog.selectNameFilter(defaultFilter);
-    if (fileDialog.exec()){
-        string filename=fileDialog.selectedFiles();
-                cout<<filename<<endl;
-
-    }*/
 
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
                                                 QDir::currentPath(),
                                                 tr("All files (*.*)"));
 
-
-   /* QFile file( fileName);
+    string word;
+    QStringList lines;
+    QFile file(fileName);
     if ( file.open( QIODevice::ReadOnly ) ) {
         QTextStream stream( &file );
         QString line;
         int i = 1;
         while ( !stream.atEnd() ) {
             line = stream.readLine(); // line of text excluding '\n'
-            printf( "%3d: %s\n", i++, line.latin1() );
+            word+=line.toStdString();
+            i++;
             lines += line;
         }
         file.close();
-    } }*/
+    }
 
-
+    cout<<word<<endl;
 }
 

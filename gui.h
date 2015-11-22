@@ -12,6 +12,7 @@
 #include <QString>
 #include <QWidget>
 #include <QFileDialog>
+#include <QTextStream>
 
 #include "Painter.h"
 
@@ -38,7 +39,7 @@ class gui: public QMainWindow
         void CreateActions();
         void CreateMenus();
         void SetActionConnection();
-        
+
 
     protected:
     private:
