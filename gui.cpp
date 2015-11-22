@@ -8,6 +8,7 @@ gui::gui()
     CreateView();
     CreateActions();
     CreateMenus();
+    CreateToolbar();
     SetActionConnection();
     QString title = "Sample";
     setWindowTitle(title);
@@ -58,6 +59,20 @@ void gui::CreateMenus() {
      about = menuBar()->addMenu("About");
      about->addAction(aboutDeveloper);
 }
+
+void gui::CreateToolbar(){
+    QPixmap newpix("img/openFile.jpg");
+    QPixmap openpix("img/saveFile.jpg");
+
+    toolbar = addToolBar("toolbar");
+    //toolbar->addAction(loadFile);
+    toolbar->addAction(QIcon(newpix), "loadFile");
+    toolbar->addAction(QIcon(openpix), "loadFile");
+
+    QAction *quit2 = toolbar->addAction(QIcon(newpix),
+      "loadFile");
+    connect(quit2, SIGNAL(triggered()), SLOT(FileOpenDialog()));
+}
 void gui::Display() {
     Painter *item = new Painter(100,100, 200, 100, widget);
     scene->addItem(item);
@@ -75,27 +90,16 @@ void gui::MessageDialog() {
 
 
 void gui::FileOpenDialog(){
-
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
+   QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
                                                 QDir::currentPath(),
                                                 tr("All files (*.*)"));
 
-    string word;
-    QStringList lines;
-    QFile file(fileName);
-    if ( file.open( QIODevice::ReadOnly ) ) {
-        QTextStream stream( &file );
-        QString line;
-        int i = 1;
-        while ( !stream.atEnd() ) {
-            line = stream.readLine(); // line of text excluding '\n'
-            word+=line.toStdString();
-            i++;
-            lines += line;
-        }
-        file.close();
-    }
+    string filePath = fileName.toStdString();
+    std::replace( filePath.begin(), filePath.end(), '/', '\\');
+    int found=filePath.find_first_of("\\");
+    filePath.insert(found,"\\");
 
-    cout<<word<<endl;
+    GraphicsFactory gf;
+    gf.buildGraphicsFromFile(filePath.c_str());
 }
 

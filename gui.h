@@ -8,6 +8,7 @@
 #include <QGraphicsScene>
 #include <QMenu>
 #include <QMenuBar>
+#include <QToolBar>
 #include <QMessageBox>
 #include <QString>
 #include <QWidget>
@@ -19,6 +20,8 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+
+#include "GraphicsFactory.h"
 
 using namespace std;
 
@@ -38,6 +41,7 @@ class gui: public QMainWindow
         void MessageBox(const QString _message);
         void CreateActions();
         void CreateMenus();
+        void CreateToolbar();
         void SetActionConnection();
 
 
@@ -48,6 +52,8 @@ class gui: public QMainWindow
         QAction *saveFile;
         QMenu *about;
         QMenu *file;
+        QToolBar *toolbar;
+
     private slots:
         void MessageDialog();
         void FileOpenDialog();
