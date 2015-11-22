@@ -11,6 +11,7 @@
 #include <QMessageBox>
 #include <QString>
 #include <QWidget>
+#include <QFileDialog>
 
 #include "Painter.h"
 
@@ -37,13 +38,18 @@ class gui: public QMainWindow
         void CreateActions();
         void CreateMenus();
         void SetActionConnection();
+        
 
     protected:
     private:
         QAction *aboutDeveloper;
+        QAction *loadFile;
+        QAction *saveFile;
         QMenu *about;
+        QMenu *file;
     private slots:
         void MessageDialog();
+        void FileOpenDialog();
 };
 
 #endif // GUI_H

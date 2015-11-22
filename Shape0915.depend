@@ -2553,7 +2553,7 @@
 	<QtGui/qpainterpath.h>
 	<QtGui/qpixmap.h>
 
-1447676888 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.h
+1448178413 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.h
 	<QtWidgets/QMainWindow>
 	<Qt>
 	<QGraphicsView>
@@ -2565,6 +2565,7 @@
 	<QMessageBox>
 	<QString>
 	<QWidget>
+	<QFileDialog>
 	"Painter.h"
 	<iostream>
 	<string>
@@ -2741,11 +2742,32 @@
 	<stack>
 	<utility>
 
-1448101051 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.cpp
+1448178852 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.cpp
 	"gui.moc"
 
-1448100830 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.moc
+1448179500 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.moc
 	"gui.h"
 	<QtCore/qbytearray.h>
+	<QtCore/qmetatype.h>
+
+1444666580 c:\qt\qt5.5.1\5.5\mingw492_32\include\qtwidgets\qfiledialog
+	"qfiledialog.h"
+
+1444666598 c:\qt\qt5.5.1\5.5\mingw492_32\include\qtwidgets\qfiledialog.h
+	<QtCore/qdir.h>
+	<QtCore/qstring.h>
+	<QtCore/qurl.h>
+	<QtWidgets/qdialog.h>
+
+1444666606 c:\qt\qt5.5.1\5.5\mingw492_32\include\qtcore\qdir.h
+	<QtCore/qstring.h>
+	<QtCore/qfileinfo.h>
+	<QtCore/qstringlist.h>
+	<QtCore/qshareddata.h>
+
+1444666606 c:\qt\qt5.5.1\5.5\mingw492_32\include\qtcore\qfileinfo.h
+	<QtCore/qfile.h>
+	<QtCore/qlist.h>
+	<QtCore/qshareddata.h>
 	<QtCore/qmetatype.h>
 
