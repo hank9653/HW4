@@ -10,3 +10,7 @@ std::string Rectangle::describe() {
     oss << "R(" << x <<"," << y << "," << l << "," << w << ")";
     return oss.str();
 }
+
+void Rectangle::draw(QGraphicsScene *gs,QPen pen){
+    gs->addRect(x,y,l,w,pen);
+};

@@ -13,6 +13,7 @@ public:
     int urx() const{return x+l;}
     int ury() const{return y+w;}
     std::string describe();
+    void draw(QGraphicsScene *gs,QPen pen);
     //int perimeter();
 private:
     int x, y;

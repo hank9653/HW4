@@ -1,6 +1,10 @@
 #include "gui.moc"
 #include <iostream>
 #include <string>
+#include "Shape.h"
+#include "Circle.h"
+#include "Rectangle.h"
+#include "Square.h"
 using namespace std;
 gui::gui()
 {
@@ -13,7 +17,9 @@ gui::gui()
     QString title = "Sample";
     setWindowTitle(title);
     setMinimumSize(800, 600);
-    Display();
+    //Display();
+    //FileSaveDialog();
+    //drawGraphics();
 
 }
 
@@ -95,11 +101,36 @@ void gui::FileOpenDialog(){
                                                 tr("All files (*.*)"));
 
     string filePath = fileName.toStdString();
-    std::replace( filePath.begin(), filePath.end(), '/', '\\');
-    int found=filePath.find_first_of("\\");
-    filePath.insert(found,"\\");
 
-    GraphicsFactory gf;
-    gf.buildGraphicsFromFile(filePath.c_str());
+
+    if(fileName.length()>4){
+        std::replace( filePath.begin(), filePath.end(), '/', '\\');
+        int found=filePath.find_first_of("\\");
+        filePath.insert(found,"\\");
+
+        graphics=graphicsFactory.buildGraphicsFromFile(filePath.c_str());
+
+        //fileContent
+        drawGraphics();
+       // GrawGraphics(dv.getDescription());
+    }
+}
+
+void gui::FileSaveDialog(){
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"),
+                           QDir::currentPath(),
+                           tr("All files (*.*)"));
+    QFile file(fileName);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        return;
+
+    QTextStream out(&file);
+    out << "The magic number is: " << 49 << "\n";
+}
+
+void gui::drawGraphics(){
+    //graphics->accept(descriptionVisitor);
+    drawVisitor.setScene(scene);
+    graphics->accept(drawVisitor);
 }
 

@@ -14,3 +14,7 @@ std::string Circle::describe() {
     return oss.str();
 }
 
+void Circle::draw(QGraphicsScene *gs,QPen pen){
+    gs->addEllipse(cx-r,cy-r,2*r,2*r,pen);
+};
+

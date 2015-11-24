@@ -8,6 +8,7 @@ public:
     int area();
     Rectangle getBoundingBox();
     std::string describe();
+    void draw(QGraphicsScene *gs,QPen pen);
 private:
     int x, y;
     int l;

@@ -1705,30 +1705,32 @@
 
 1443930946 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\graphicsvisitor.h
 
-1443922524 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\simplegraphics.h
+1448299755 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\simplegraphics.h
 	"Graphics.h"
 	"Shape.h"
 	<iostream>
 
-1444025638 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\graphics.h
+1448298679 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\graphics.h
+	"DrawVisitor.h"
 
-1443923776 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\shape.h
+1448347316 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\shape.h
 	<string>
+	<QGraphicsScene>
 
 1443922584 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\compositegraphics.h
 	"Graphics.h"
 	<vector>
 	"GraphicsVisitor.h"
 
-1443269960 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\circle.cpp
+1448347449 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\circle.cpp
 	"Circle.h"
 	"Rectangle.h"
 	<sstream>
 
-1443269550 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\circle.h
+1448347363 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\circle.h
 	"Shape.h"
 
-1443270340 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\rectangle.h
+1448347304 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\rectangle.h
 	"Shape.h"
 
 1443930556 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\compositegraphics.cpp
@@ -1749,7 +1751,7 @@
 	"Graphics.h"
 	<string>
 
-1443922746 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\graphics.cpp
+1448298601 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\graphics.cpp
 	"Graphics.h"
 	"Rectangle.h"
 	<string>
@@ -1774,7 +1776,7 @@
 	<string>
 	<utility>
 
-1443923844 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\square.h
+1448347424 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\square.h
 	"Shape.h"
 
 1446453148 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\util.h
@@ -1785,9 +1787,8 @@
 	<stack>
 	<utility>
 
-1448192760 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\main.cpp
+1448194796 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\main.cpp
 	"cppunitlite/TestHarness.h"
-	"utHW3.h"
 	"utTryQt.h"
 
 1021612118 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\cppunitlite\testharness.h
@@ -1809,7 +1810,7 @@
 
 1021612118 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\cppunitlite\testregistry.h
 
-1447826021 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\uttryqt.h
+1448282031 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\uttryqt.h
 	<QApplication>
 	<QFont>
 	<QPushButton>
@@ -2554,7 +2555,7 @@
 	<QtGui/qpainterpath.h>
 	<QtGui/qpixmap.h>
 
-1448194724 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.h
+1448346740 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.h
 	<QtWidgets/QMainWindow>
 	<Qt>
 	<QGraphicsView>
@@ -2574,6 +2575,8 @@
 	<string>
 	<sstream>
 	"GraphicsFactory.h"
+	"Graphics.h"
+	"DescriptionVisitor.h"
 
 1444666580 c:\qt\qt5.5.1\5.5\mingw492_32\include\qtwidgets\qmainwindow
 	"qmainwindow.h"
@@ -2719,7 +2722,7 @@
 1447677741 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\painter.cpp
 	"Painter.h"
 
-1443331660 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\rectangle.cpp
+1448347276 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\rectangle.cpp
 	"Rectangle.h"
 	<sstream>
 
@@ -2728,7 +2731,7 @@
 	"Rectangle.h"
 	"AreaVisitor.h"
 
-1443270230 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\square.cpp
+1448347471 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\square.cpp
 	"Square.h"
 	"Rectangle.h"
 	<sstream>
@@ -2746,12 +2749,16 @@
 	<stack>
 	<utility>
 
-1448192758 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.cpp
+1448346777 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.cpp
 	"gui.moc"
 	<iostream>
 	<string>
+	"Shape.h"
+	"Circle.h"
+	"Rectangle.h"
+	"Square.h"
 
-1448184434 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.moc
+1448345963 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.moc
 	"gui.h"
 	<QtCore/qbytearray.h>
 	<QtCore/qmetatype.h>
@@ -2795,4 +2802,14 @@
 	"AreaVisitor.h"
 	"DescriptionVisitor.h"
 	"GraphicsFactory.h"
+
+1448347424 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\drawvisitor.cpp
+	"DrawVisitor.h"
+	"SimpleGraphics.h"
+	"CompositeGraphics.h"
+	"Rectangle.h"
+
+1448344057 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\drawvisitor.h
+	"GraphicsVisitor.h"
+	<QGraphicsScene>
 

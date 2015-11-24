@@ -22,6 +22,8 @@
 #include <sstream>
 
 #include "GraphicsFactory.h"
+#include "Graphics.h"
+#include "DescriptionVisitor.h"
 
 using namespace std;
 
@@ -54,9 +56,19 @@ class gui: public QMainWindow
         QMenu *file;
         QToolBar *toolbar;
 
+
     private slots:
         void MessageDialog();
         void FileOpenDialog();
+        void FileSaveDialog();
+
+    private:
+        Graphics *graphics;
+        GraphicsFactory graphicsFactory;
+        DescriptionVisitor descriptionVisitor;
+        DrawVisitor drawVisitor;
+        string fileContent;
+        void drawGraphics();
 };
 
 #endif // GUI_H

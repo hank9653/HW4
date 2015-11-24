@@ -13,3 +13,7 @@ std::string Square::describe() {
     return oss.str();
 }
 
+void Square::draw(QGraphicsScene *gs,QPen pen){
+    gs->addRect(x,y,l,l,pen);
+};
+
