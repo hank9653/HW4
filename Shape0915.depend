@@ -2555,7 +2555,7 @@
 	<QtGui/qpainterpath.h>
 	<QtGui/qpixmap.h>
 
-1448346740 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.h
+1448355041 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.h
 	<QtWidgets/QMainWindow>
 	<Qt>
 	<QGraphicsView>
@@ -2749,7 +2749,7 @@
 	<stack>
 	<utility>
 
-1448346777 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.cpp
+1448355620 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.cpp
 	"gui.moc"
 	<iostream>
 	<string>
@@ -2758,7 +2758,7 @@
 	"Rectangle.h"
 	"Square.h"
 
-1448345963 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.moc
+1448353336 c:\users\ting-jhih\desktop\c_plusplus_progeam\tryshape0915\gui.moc
 	"gui.h"
 	<QtCore/qbytearray.h>
 	<QtCore/qmetatype.h>

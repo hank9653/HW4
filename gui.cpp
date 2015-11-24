@@ -47,37 +47,37 @@ void gui::CreateView(){
 
 void gui::SetActionConnection() {
     connect(aboutDeveloper, SIGNAL(triggered()), this, SLOT(MessageDialog()));
-    connect(loadFile, SIGNAL(triggered()), this, SLOT(FileOpenDialog()));
-    connect(saveFile, SIGNAL(triggered()), this, SLOT(MessageDialog()));
+    connect(openFile, SIGNAL(triggered()), this, SLOT(FileOpenDialog()));
+    connect(saveFile, SIGNAL(triggered()), this, SLOT(FileSaveDialog()));
+    connect(openFileBar, SIGNAL(triggered()), this, SLOT(FileOpenDialog()));
+    connect(saveFileBar, SIGNAL(triggered()), this, SLOT(FileSaveDialog()));
 }
 
 void gui::CreateActions() {
-        aboutDeveloper = new QAction("aboutDeveloper", widget);
-        loadFile = new QAction("loadFile", widget);
-        saveFile = new QAction("saveFile", widget);
+    aboutDeveloper = new QAction("aboutDeveloper", widget);
+    openFile = new QAction("openFile", widget);
+    saveFile = new QAction("saveFile", widget);
 }
 
 void gui::CreateMenus() {
+     QPixmap openpix("img/openFile.png");
+     QPixmap savepix("img/saveFile.png");
 
      file = menuBar()->addMenu("File");
-     file->addAction(loadFile);
-     file->addAction(saveFile);
+     openFile = file->addAction(openpix,"openFile");
+     saveFile = file->addAction(savepix,"saveFile");
+
      about = menuBar()->addMenu("About");
      about->addAction(aboutDeveloper);
 }
 
 void gui::CreateToolbar(){
-    QPixmap newpix("img/openFile.jpg");
-    QPixmap openpix("img/saveFile.jpg");
+    QPixmap openpix("img/openFile.png");
+    QPixmap savepix("img/saveFile.png");
 
     toolbar = addToolBar("toolbar");
-    //toolbar->addAction(loadFile);
-    toolbar->addAction(QIcon(newpix), "loadFile");
-    toolbar->addAction(QIcon(openpix), "loadFile");
-
-    QAction *quit2 = toolbar->addAction(QIcon(newpix),
-      "loadFile");
-    connect(quit2, SIGNAL(triggered()), SLOT(FileOpenDialog()));
+    openFileBar = toolbar->addAction(openpix,"openFile");
+    saveFileBar = toolbar->addAction(savepix,"saveFile");
 }
 void gui::Display() {
     Painter *item = new Painter(100,100, 200, 100, widget);
@@ -98,7 +98,7 @@ void gui::MessageDialog() {
 void gui::FileOpenDialog(){
    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
                                                 QDir::currentPath(),
-                                                tr("All files (*.*)"));
+                                                tr("Text files (*.txt);;All files (*.*)"));
 
     string filePath = fileName.toStdString();
 
@@ -108,29 +108,34 @@ void gui::FileOpenDialog(){
         int found=filePath.find_first_of("\\");
         filePath.insert(found,"\\");
 
-        graphics=graphicsFactory.buildGraphicsFromFile(filePath.c_str());
+        scene->clear();//清除原有的場景
 
-        //fileContent
-        drawGraphics();
-       // GrawGraphics(dv.getDescription());
+        GraphicsFactory graphicsFactory;
+        Graphics *graphics=graphicsFactory.buildGraphicsFromFile(filePath.c_str());
+
+        graphics->accept(descriptionVisitor);
+        fileContent = descriptionVisitor.getDescription();
+        drawGraphics(graphics);
     }
 }
 
 void gui::FileSaveDialog(){
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"),
                            QDir::currentPath(),
-                           tr("All files (*.*)"));
+                           tr("Text files (*.txt);;All files (*.*)"));
     QFile file(fileName);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
         return;
 
     QTextStream out(&file);
-    out << "The magic number is: " << 49 << "\n";
+    out << fileContent.c_str();
 }
 
-void gui::drawGraphics(){
+void gui::drawGraphics(Graphics *graphics){
     //graphics->accept(descriptionVisitor);
     drawVisitor.setScene(scene);
     graphics->accept(drawVisitor);
+
+    //delete graphicsFactory;
 }
 

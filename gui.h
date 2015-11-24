@@ -50,11 +50,14 @@ class gui: public QMainWindow
     protected:
     private:
         QAction *aboutDeveloper;
-        QAction *loadFile;
+        QAction *openFile;
         QAction *saveFile;
+        QAction *openFileBar;
+        QAction *saveFileBar;
         QMenu *about;
         QMenu *file;
         QToolBar *toolbar;
+
 
 
     private slots:
@@ -63,12 +66,10 @@ class gui: public QMainWindow
         void FileSaveDialog();
 
     private:
-        Graphics *graphics;
-        GraphicsFactory graphicsFactory;
         DescriptionVisitor descriptionVisitor;
         DrawVisitor drawVisitor;
         string fileContent;
-        void drawGraphics();
+        void drawGraphics(Graphics *graphics);
 };
 
 #endif // GUI_H
