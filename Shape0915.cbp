@@ -17,6 +17,7 @@
 				<Linker>
 					<Add option="-s" />
 					<Add library="cppunitlite\cppUnitLite.a" />
+					<Add library="cppunitlite\libCppUnitLite.a" />
 				</Linker>
 			</Target>
 		</Build>
@@ -76,6 +77,8 @@
 		<Unit filename="CompositeGraphics.h" />
 		<Unit filename="DescriptionVisitor.cpp" />
 		<Unit filename="DescriptionVisitor.h" />
+		<Unit filename="DrawVisitor.cpp" />
+		<Unit filename="DrawVisitor.h" />
 		<Unit filename="Graphics.cpp" />
 		<Unit filename="Graphics.h" />
 		<Unit filename="GraphicsFactory.cpp" />

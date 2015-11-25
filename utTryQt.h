@@ -11,12 +11,12 @@ char a[2]={'0','1'};
 char * argv[1]={a};
 
 TEST (TryQt, first) {
-    QApplication app(argc, argv);
+    /*QApplication app(argc, argv);
     QPushButton quit("Quit");
     quit.resize(75, 30);
     quit.setFont(QFont("Times", 18, QFont::Bold));
     QObject::connect(&quit, SIGNAL(clicked()), &app, SLOT(quit()));
-    quit.show();
+    quit.show();*/
 }
 
 #include <QVBoxLayout>
